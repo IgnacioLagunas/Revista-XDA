@@ -1,0 +1,103 @@
+.navbar{
+    background-color: white;
+    width: 100%;
+    height: 72px;
+    justify-content: space-between;
+    // border: solid 4px black;
+    grid-column: 1 / -1;
+}
+
+.navbar__logo{
+    height: 100%;
+    width: 72px;
+    background-color: $black;
+    justify-content: center;
+    align-items: center;
+    h3{
+        font-family: $titulos;
+        color: #D1D1D1;
+        letter-spacing: 0.7px;
+        font-weight: $bold;
+        font-size: $xl;
+    }
+}
+#menu{
+    display: none;
+}
+
+.navlist{
+    display: flex;
+    align-items: center;
+    margin-right: 2em;
+    &__container{
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+    &__item{
+        margin-left: 4em;
+        a{
+            font-family: $texto;
+            font-weight: $bold;
+            color: $black;
+            font-size: 14px;
+
+        }
+    }
+}
+.colapsable{
+    display: flex;
+    align-items: center;
+    margin-right: 3em;
+    
+    &__hamburguesa i{
+        color: black;
+        font-size: $xl;
+        display: none;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 992px){
+    .navlist{
+
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+        background-color: white;
+        height: 345px;
+        width: 200px;
+        margin-right: 0;
+        position: absolute;
+        top: 68px;
+        right: -200px;
+        transition:  0.3s;
+        
+        li{
+            margin: 0;
+            width: 100%;
+            padding: 32px 0; 
+            cursor: pointer;
+            &:hover{
+                background-color: rgba(221, 209, 170, 0.637);
+                transition: 0.3s;
+            }
+            
+        }
+    }
+    
+    .colapsable{
+        &__hamburguesa i{
+            display: block;
+            
+        }
+        input:checked ~ .navlist{
+            transform: translateX(-100%);
+            transition: 0.4s;
+        }
+    }
+}
+@media (max-width: 768px){
+
+}
